@@ -1,13 +1,13 @@
-package com.curd.test.web_crud_project;
+package com.curd.test.project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WebCrudProjectApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(WebCrudProjectApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }
