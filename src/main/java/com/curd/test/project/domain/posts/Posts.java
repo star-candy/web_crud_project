@@ -1,6 +1,6 @@
 package com.curd.test.project.domain.posts;
 
-//import com.jojoldu.book.springboot.domain.BaseTimeEntity;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,8 +35,8 @@ public class Posts {
         this.author = author;
     }
 
-    /* void update(String title, String content) {
+    public void update(String title, String content) {
         this.title = title;
         this.content = content;
-    }*/
+    }
 }
