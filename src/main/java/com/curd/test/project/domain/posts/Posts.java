@@ -1,6 +1,6 @@
 package com.curd.test.project.domain.posts;
 
-
+//import com.jojoldu.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

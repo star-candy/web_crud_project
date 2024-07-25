@@ -8,7 +8,7 @@ import com.curd.test.project.web.dto.PostsSaveRequestDto;
 import com.curd.test.project.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.annotation.Transactional; //더티 체킹 가능
 
 import java.util.List;
 import java.util.stream.Collectors;
