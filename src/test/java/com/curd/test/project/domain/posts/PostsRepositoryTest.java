@@ -45,7 +45,7 @@ public class PostsRepositoryTest {
         assertThat(posts.getContent()).isEqualTo(content); // 검증
     }
 
-    /*@Test
+    @Test
     public void BaseTimeEntity_등록() {
         //given
         LocalDateTime now = LocalDateTime.of(2019, 6, 4, 0, 0, 0);
@@ -64,5 +64,5 @@ public class PostsRepositoryTest {
 
         assertThat(posts.getCreatedDate()).isAfter(now);
         assertThat(posts.getModifiedDate()).isAfter(now);
-    }*/
+    }
 }

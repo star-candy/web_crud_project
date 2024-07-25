@@ -1,6 +1,7 @@
 package com.curd.test.project.domain.posts;
 
-//import com.jojoldu.book.springboot.domain.BaseTimeEntity;
+import com.curd.test.project.domain.BaseTimeEntity;
+import com.fasterxml.jackson.databind.ser.Serializers.Base;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,7 @@ import javax.persistence.Id;
 @Getter //모든 필드 대한 getter 정의
 @NoArgsConstructor //기본 생성자 정의
 @Entity //jpa annotation, 테이블과 매핑되는 클래스 의미
-public class Posts {
+public class Posts extends BaseTimeEntity {//entity의 저장, 수정 등 공통 인자에 대해 자동 저장하는 baseTime 상속
 
     @Id //class의 pk 필드
     @GeneratedValue(strategy = GenerationType.IDENTITY) //pk 규칙 정의
