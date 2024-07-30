@@ -3,6 +3,7 @@ package com.curd.test.project.service;
 
 import com.curd.test.project.domain.posts.Posts;
 import com.curd.test.project.domain.posts.PostsRepository;
+import com.curd.test.project.web.dto.PostsListResponseDto;
 import com.curd.test.project.web.dto.PostsResponseDto;
 import com.curd.test.project.web.dto.PostsSaveRequestDto;
 import com.curd.test.project.web.dto.PostsUpdateRequestDto;
@@ -34,16 +35,14 @@ public class PostsService {
         return id;
     }
 
-
-    /*
     @Transactional
     public void delete (Long id) {
         Posts posts = postsRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
+                .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
 
         postsRepository.delete(posts);
     }
-    */
+
     @Transactional(readOnly = true)
     public PostsResponseDto findById(Long id) {
         Posts entity = postsRepository.findById(id)
@@ -51,11 +50,11 @@ public class PostsService {
 
         return new PostsResponseDto(entity);
     }
-    /*
+
     @Transactional(readOnly = true)
     public List<PostsListResponseDto> findAllDesc() {
         return postsRepository.findAllDesc().stream()
                 .map(PostsListResponseDto::new)
                 .collect(Collectors.toList());
-    }*/
+    }
 }
