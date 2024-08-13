@@ -17,7 +17,7 @@ import javax.persistence.Id;
 @Entity //jpa annotation, 테이블과 매핑되는 클래스 의미
 public class Posts extends BaseTimeEntity {//entity의 저장, 수정 등 공통 인자에 대해 자동 저장하는 baseTime 상속
 
-    @Id //class의 pk 필드
+    @Id //class의 필드 키
     @GeneratedValue(strategy = GenerationType.IDENTITY) //pk 규칙 정의
     private Long id;
 

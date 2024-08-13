@@ -40,8 +40,8 @@ public class PostsRepositoryTest {
         List<Posts> postsList = postsRepository.findAll(); //posts의 모든 데이터 조회, update된 값 불러올 것
 
         //then
-        Posts posts = postsList.get(0);
-        assertThat(posts.getTitle()).isEqualTo(title);
+        Posts posts = postsList.get(0); //postsList에 첫번째로 저장된 데이터 가져옴
+        assertThat(posts.getTitle()).isEqualTo(title); //test 제목과 posts내 데이터가 동일한가
         assertThat(posts.getContent()).isEqualTo(content); // 검증
     }
 

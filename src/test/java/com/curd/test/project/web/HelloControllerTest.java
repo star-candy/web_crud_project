@@ -1,6 +1,5 @@
 package com.curd.test.project.web;
 
-//import com.jojoldu.book.springboot.config.auth.SecurityConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +17,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class) //springboot를 통해 테스트 진행
-@WebMvcTest(controllers = HelloController.class) //web 테스트를 위함, controller에 대한 테스트만 가능
+@WebMvcTest(controllers = HelloController.class) //web 테스트를 위함, mvc 객체 bean 등록
 public class HelloControllerTest {
 
-    @Autowired //spring의 bean 입력
-    private MockMvc mvc;//mvc테스트 시작점, api 테스트 진행
+    @Autowired //spring에 bean 입력, 특정 객체가 bean 등록 x 시 의존성 주입 실패
+    private MockMvc mvc;//mvc테스트 시작점, autowired 통해 스프링이 자동으로 mvc 객체 주입
 
     @Test
     public void hello가_리턴된다() throws Exception {
