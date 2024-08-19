@@ -26,9 +26,9 @@ public class OAuthAttributes {
     //of 메서드로 여러 매개변수 받아 적합한 객체 반환하는 기능, 단일 매개변수시 from 메서드 사용관례
     public static OAuthAttributes of(String registrationId, String userNameAttributeName, Map<String, Object> attributes) {
 
-        if("naver".equals(registrationId)) {
+        /*if("naver".equals(registrationId)) {
             return ofNaver("id", attributes);
-        }
+        }*/
 
         return ofGoogle(userNameAttributeName, attributes);
     }
@@ -44,7 +44,7 @@ public class OAuthAttributes {
                 .build();
     }
 
-    private static OAuthAttributes ofNaver(String userNameAttributeName, Map<String, Object> attributes) {
+    /*private static OAuthAttributes ofNaver(String userNameAttributeName, Map<String, Object> attributes) {
         Map<String, Object> response = (Map<String, Object>) attributes.get("response");
 
         return OAuthAttributes.builder()
@@ -54,7 +54,7 @@ public class OAuthAttributes {
                 .attributes(response)
                 .nameAttributeKey(userNameAttributeName)
                 .build();
-    }
+    }*/
 
     //최초 가입시 user 엔티티 생성, 초기 role은 guest 지정
     public User toEntity() {
