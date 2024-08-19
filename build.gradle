@@ -31,8 +31,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa') //jpa 라이브러리 버전 관리
     compile('org.springframework.boot:spring-boot-starter-mustache') //머스테치 의존성 추가
     compile('com.h2database:h2') //데이터베이스, 재실행시 초기화
-
-
+    compile('org.springframework.boot:spring-boot-starter-oauth2-client') //로그인 기능 구현 의존성
     compile("org.mariadb.jdbc:mariadb-java-client")
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
