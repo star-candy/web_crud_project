@@ -5,12 +5,12 @@
     <div class="row">
         <div class="col-md-6">
             <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a> <!--글 등록 페이지 이동 버튼, post/save로 이동-->
-            {{#userName}}
+            {{#userName}} <!-- 유저 이름 존재 시-->
                 Logged in as: <span id="user">{{userName}}</span>
-                <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+                <a href="/logout" class="btn btn-info active" role="button">Logout</a> <!-- spring 시큐리티 제공 url, logout 내부 컨트롤러 제작 필요 x -->
             {{/userName}}
-            {{^userName}}
-                <a href="/oauth2/oauthorization/google" class="btn btn-success active" role="button">Goggle Login</a>
+            {{^userName}} <!-- 유저 이름 없을 때-->
+                <a href="/oauth2/oauthorization/google" class="btn btn-success active" role="button">Goggle Login</a> <!-- spring 시큐리티 제공 url, logout 내부 컨트롤러 제작 필요 x -->
             {{/userName}}
         </div>
     </div>

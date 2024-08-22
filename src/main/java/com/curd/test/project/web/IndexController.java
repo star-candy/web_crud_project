@@ -1,5 +1,6 @@
 package com.curd.test.project.web;
 
+import com.curd.test.project.config.auth.LoginUser;
 import com.curd.test.project.config.auth.dto.SessionUser;
 import com.curd.test.project.service.PostsService;
 import com.curd.test.project.web.dto.PostsResponseDto;
@@ -18,10 +19,11 @@ public class IndexController {
     private final PostsService postsService;
     private final HttpSession httpSession;
 
+
+    //session.get(user) 통해 가져오던 정보를 LoginUser 어노테이션으로 대체
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
 
         if(user != null) {
             model.addAttribute("userName", user.getName());

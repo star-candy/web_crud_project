@@ -33,6 +33,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 //로그인 설정 진입점
                 .oauth2Login()
+                .defaultSuccessUrl("/", true)// 로그인 성공 후 "/"로 리다이렉트
+                /*.loginPage("/login") // 로그인 페이지 URL은 index.mustache에서 자동 리다이렉트 */
                 .userInfoEndpoint() //로그인 성공 후 사용자 정보 가져오는 설정 담당
                 .userService(customOAuth2UserService); //로그인 후 후속조치 인터페이스 등록
     }
