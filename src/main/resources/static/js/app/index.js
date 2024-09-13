@@ -1,5 +1,5 @@
 var main = { //다른위치에 동일 js 함수명 존재 시 오버라이드 가능성, 따라서 main함수 내의 js 함수로 scope 지정한 것
-    init : function () {
+    init : function () { //초기화 및 버튼에 대한 클릭 이벤트 담당
         var _this = this;
         $('#btn-save').on('click', function () {
             _this.save();
@@ -20,7 +20,7 @@ var main = { //다른위치에 동일 js 함수명 존재 시 오버라이드 �
             content: $('#content').val()
         };
 
-        $.ajax({
+        $.ajax({ //post 요청에 대해 data 객체를 전송함
             type: 'POST',
             url: '/api/v1/posts',
             dataType: 'json',

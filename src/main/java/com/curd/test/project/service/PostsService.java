@@ -1,6 +1,5 @@
 package com.curd.test.project.service;
 
-
 import com.curd.test.project.domain.posts.Posts;
 import com.curd.test.project.domain.posts.PostsRepository;
 import com.curd.test.project.web.dto.PostsListResponseDto;
@@ -10,7 +9,6 @@ import com.curd.test.project.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional; //더티 체킹 가능
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,8 +18,8 @@ public class PostsService {
     private final PostsRepository postsRepository;
 
     @Transactional
-    public Long save(PostsSaveRequestDto requestDto) { //id 받아와서 postRepository에 저장
-        return postsRepository.save(requestDto.toEntity()).getId(); //save 동작은 insert 쿼리를 발생시킬 것
+    public Long save(PostsSaveRequestDto requestDto) { //Dto 객체 통한 data input
+        return postsRepository.save(requestDto.toEntity()).getId(); //repository 영역으로 dto 객체 반환
     }
 
     @Transactional

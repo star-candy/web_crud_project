@@ -21,11 +21,10 @@ public class PostsSaveRequestDto {
     }
 
     public Posts toEntity() {
-        return Posts.builder()
+        return Posts.builder() //builder 패턴으로 객체 생성
                 .title(title)
                 .content(content)
                 .author(author)
                 .build();
     }
-
 }
